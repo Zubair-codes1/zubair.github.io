@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zubair ~ Systems Programmer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-logo">zubair<span class="cursor">▋</span></span>
+    <div class="nav-links">
+      <a href="#about">~/about</a>
+      <a href="#projects">~/projects</a>
+      <a href="https://github.com/Zubair-codes1" target="_blank">~/github</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-inner">
+      <p class="eyebrow">$ whoami</p>
+      <h1 class="hero-name">Zubair</h1>
+      <p class="hero-title">Systems Programmer · CS @ King's College London</p>
+      <p class="hero-bio">
+        I build things close to the metal — virtual machines, terminal emulators,
+        custom binary protocols. Currently exploring compiler engineering and OS internals.
+        Long-term target: Apple Core OS.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">view projects</a>
+        <a href="https://github.com/Zubair-codes1" target="_blank" class="btn-ghost">↗ github</a>
+      </div>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">zubair@kclms ~ zsh</span>
+      </div>
+      <div class="terminal-body" id="termBody"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section" id="projects">
+    <div class="projects-inner">
+      <p class="eyebrow">$ ls ~/projects -la</p>
+      <h2 class="section-title">Projects</h2>
+
+      <!-- ZVM -->
+      <div class="project-detail">
+        <div class="project-detail-header">
+          <div>
+            <span class="detail-tag">Flagship · Java</span>
+            <h3>ZVM — Zubair Virtual Machine</h3>
+          </div>
+          <a href="https://github.com/Zubair-codes1/ZVM-Zubair_Virtual_Machine" class="btn-ghost-sm" target="_blank">↗ GitHub</a>
+        </div>
+        <p class="project-detail-desc">
+          A stack-based bytecode virtual machine with a custom instruction set architecture.
+          Includes Zembler — a two-pass assembler — a constant pool, bump-allocator heap,
+          frame-based call stack, and Zebugger, an interactive CLI debugger with sidecar .dbg
+          files. Fully documented with ISA.md and BYTECODE.md specs.
+        </p>
+        <div class="detail-highlights">
+          <div class="highlight-item"><span class="hl-key">Build</span><span class="hl-val">Maven multi-module</span></div>
+          <div class="highlight-item"><span class="hl-key">Tests</span><span class="hl-val">JUnit 5</span></div>
+          <div class="highlight-item"><span class="hl-key">CI</span><span class="hl-val">GitHub Actions</span></div>
+          <div class="highlight-item"><span class="hl-key">Releases</span><span class="hl-val">Versioned</span></div>
+        </div>
+        <div class="card-stack">Java · Maven · JUnit 5 · GitHub Actions</div>
+      </div>
+
+      <!-- ZERMINAL -->
+      <div class="project-detail">
+        <div class="project-detail-header">
+          <div>
+            <span class="detail-tag">Active · C</span>
+            <h3>Zerminal — Unix Terminal Emulator</h3>
+          </div>
+          <a href="https://github.com/Zubair-codes1/Zerminal" class="btn-ghost-sm" target="_blank">↗ GitHub</a>
+        </div>
+        <p class="project-detail-desc">
+          A Unix shell and terminal emulator written in C from scratch.
+          Implements fork/exec, built-ins (cd, exit), pipes, I/O redirection,
+          and signal handling. PTY support currently in progress.
+          Clean Makefile build system; live on GitHub.
+        </p>
+        <div class="detail-highlights">
+          <div class="highlight-item"><span class="hl-key">Language</span><span class="hl-val">C (POSIX)</span></div>
+          <div class="highlight-item"><span class="hl-key">IPC</span><span class="hl-val">fork/exec, pipe, dup2</span></div>
+          <div class="highlight-item"><span class="hl-key">Signals</span><span class="hl-val">SIGINT, SIGCHLD</span></div>
+          <div class="highlight-item"><span class="hl-key">Next</span><span class="hl-val">PTY + GUI</span></div>
+        </div>
+        <div class="card-stack">C · POSIX · PTY · Signals</div>
+      </div>
+
+      <!-- ZMP -->
+      <div class="project-detail">
+        <div class="project-detail-header">
+          <div>
+            <span class="detail-tag">Complete · C</span>
+            <h3>ZMP — Zubair Messaging Protocol</h3>
+          </div>
+          <a href="https://github.com/Zubair-codes1/ZMP-Zubair_Messaging_Protocol" class="btn-ghost-sm" target="_blank">↗ GitHub</a>
+        </div>
+        <p class="project-detail-desc">
+          A custom binary TCP protocol with a 5-byte header, Fletcher-16 checksum,
+          and select()-based multiplexing for multi-client support. Features private
+          rooms via /create and /join commands. Documented in PROTOCOL.md.
+          Planned: encryption and packaging as a shared C library callable from Python via ctypes.
+        </p>
+        <div class="detail-highlights">
+          <div class="highlight-item"><span class="hl-key">Protocol</span><span class="hl-val">Binary TCP, 5-byte header</span></div>
+          <div class="highlight-item"><span class="hl-key">Checksum</span><span class="hl-val">Fletcher-16</span></div>
+          <div class="highlight-item"><span class="hl-key">I/O Model</span><span class="hl-val">select() multiplexing</span></div>
+          <div class="highlight-item"><span class="hl-key">Next</span><span class="hl-val">Encryption + ctypes binding</span></div>
+        </div>
+        <div class="card-stack">C · TCP/IP · Sockets · select()</div>
+      </div>
+
+      <!-- ROADMAP -->
+      <div class="roadmap-section">
+        <p class="eyebrow">$ cat ~/roadmap.txt</p>
+        <h3 class="roadmap-title">What's next</h3>
+        <div class="roadmap">
+          <div class="road-item active-item">
+            <span class="road-label">Zerminal</span>
+            <span class="road-desc">PTY + GUI</span>
+          </div>
+          <div class="road-arrow">→</div>
+          <div class="road-item">
+            <span class="road-label">Zompiler / ZLang</span>
+            <span class="road-desc">Compiler targeting ZVM bytecode</span>
+          </div>
+          <div class="road-arrow">→</div>
+          <div class="road-item">
+            <span class="road-label">Bare-metal ARM</span>
+            <span class="road-desc">ARMv8 exploration</span>
+          </div>
+          <div class="road-arrow">→</div>
+          <div class="road-item">
+            <span class="road-label">ZOS</span>
+            <span class="road-desc">Operating system kernel</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer-left">~echo Zubair</span>
+    <div class="footer-links">
+      <a href="https://github.com/Zubair-codes1" target="_blank">github</a>
+      <a href="mailto:zubairabdulmatin@gmail.com">zubairabdulmatin@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="terminal.js"></script>
+</body>
+</html>
